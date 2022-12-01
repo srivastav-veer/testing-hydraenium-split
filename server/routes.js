@@ -3,7 +3,8 @@ var router = express.Router();
 var numberService = require('./numberService');
 
 router.get('/get', function (req, res){
-    res.status(200).send({number: numberService._get()});
+    let numbers = numberService._get();
+    res.status(200).send({number:numbers});
 });
 
 router.get('/set', function (req, res){

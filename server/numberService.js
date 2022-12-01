@@ -22,6 +22,9 @@ module.exports = {
             //write this to a file.
             fs.writeFile('startTime.log', 'Started at '+Math.floor(new Date().getTime() / 1000), function() {console.log('written')});
         }
+        if (numbers.length==0) {
+            return false;
+        }
         return numbers.pop();
     },
     _set: function (number) {

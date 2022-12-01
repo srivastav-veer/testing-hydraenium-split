@@ -11,7 +11,7 @@ server.listen(port);
 server.on('error', onError);
 
 //Create 1M numbers and store it to RAM
-numberService.generate(1000);
+numberService.generate(10);
 
 server.on('listening', onListening);
  
