@@ -2,7 +2,7 @@ var curl = require('curl');
 
 function getNumber() {
   return new Promise ((resolve, reject) => {
-    curl.get('http://localhost:8080/numbers/get',{}, function (err, response, body) {
+    curl.get('http://13.233.151.221:8080/numbers/get',{}, function (err, response, body) {
       number = JSON.parse(body);
       number = number.number;
       resolve(number);
@@ -12,7 +12,7 @@ function getNumber() {
 //http://13.233.151.221:8080/numbers/set?number
 function setNumber(number) {
   return new Promise ((resolve, reject) => {
-    curl.get('http://localhost:8080/numbers/set?number='+number, {}, (err, response, body) => {
+    curl.get('http://13.233.151.221:8080/numbers/set?number='+number, {}, (err, response, body) => {
       console.log(body);
       number = JSON.parse(body);
       number = number.number;
@@ -43,5 +43,6 @@ function setNumber(number) {
       exit = true;
     }
   }
+  console.log('Exiting');
 })();
 
