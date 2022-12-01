@@ -30,7 +30,7 @@ module.exports = {
     _set: function (number) {
         output.push(number);
         if (output.length === totalLength) {
-            fs.writeFile('endTime.log', 'End at '+Math.floor(new Date().getTime() / 1000), function() {console.log('End')});
+            fs.writeFile('endTime.log', 'End at '+Math.floor(new Date().getTime() / 1000), function() {console.log('End', output.length)});
             return false;
         } else {
             return true;
